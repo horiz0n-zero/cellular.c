@@ -3,10 +3,10 @@
 
 clang -fsanitize=address -g -O0 cellular.c -o cellular
 
-./cellular 'size + 2 for edges' 'turn' 'survive value'
+./cellular 'size + 2 for edges' 'turn' 'survive value' 'seed'
 
 nice exemple :
-./cellular 42 5 4
+./cellular 42 5 4 2
 
 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 1
 
