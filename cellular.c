@@ -47,7 +47,10 @@ static void 			*get_cellular_map(int *const setting)
 		x = 0;
 		while (x < *setting)
 		{
-			new[z][x] = (int)arc4random_uniform(2);
+			if (arc4random_uniform((uint32_t)setting[3]) > 0)
+				new[z][x] = 1;
+			else
+				new[z][x] = 0;
 			x++;
 		}
 		z++;
@@ -99,9 +102,10 @@ static void				ft_cellular(int *const setting)
 
 int 					main(int argc, char **argv)
 {
-	int 				setting[3];
+	int 				setting[4];
 	int 				index;
 
+	memset(setting, 0, sizeof(setting));
 	index = 0;
 	while (*++argv)
 	{
